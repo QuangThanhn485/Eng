@@ -208,31 +208,31 @@ async function displayResuln(item, text_1, text_2, text_3, text_4, text_5) {
         count++;
         if (count == 1) {
             if (item[key].normalize() != text_1.value.normalize().trim()) {
-                message += `<li class="list-group-item">sai câu 1 đáp án là '${item[key]}'</li>`;
+                message += `<li class="list-group-item">sai câu <strong>1</strong> đáp án là <strong>'${item[key]}'</strong></li>`;
                 succeeded--;
             }
         }
         if (count == 2) {
             if (item[key].normalize() != text_2.value.normalize().trim()) {
-                message += `<li class="list-group-item">sai câu 2 đáp án là '${item[key]}'</li>`;
+                message += `<li class="list-group-item">sai câu <strong>2</strong> đáp án là <strong>'${item[key]}'</strong></li>`;
                 succeeded--;
             }
         }
         if (count == 3) {
             if (item[key].normalize() != text_3.value.normalize().trim()) {
-                message += `<li class="list-group-item">sai câu 3 đáp án là '${item[key]}'</li>`;
+                message += `<li class="list-group-item">sai câu <strong>3</strong> đáp án là <strong>'${item[key]}'</strong></li>`;
                 succeeded--;
             }
         }
         if (count == 4) {
             if (item[key].normalize() != text_4.value.normalize().trim()) {
-                message += `<li class="list-group-item">sai câu 4 đáp án là '${item[key]}'</li>`;
+                message += `<li class="list-group-item">sai câu <strong>4</strong> đáp án là <strong>'${item[key]}'</strong></li>`;
                 succeeded--;
             }
         }
         if (count == 5) {
             if (item[key].normalize() != text_5.value.normalize().trim()) {
-                message += `<li class="list-group-item">sai câu 5 đáp án là '${item[key]}'</li>`;
+                message += `<li class="list-group-item">sai câu <strong>5</strong> đáp án là <strong>'${item[key]}'</strong></li>`;
                 succeeded--;
             }
         }
