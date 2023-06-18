@@ -200,44 +200,43 @@ async function _resuln(_part) {
     </ul>`;
 }
 
-async function displayResuln(item, text_1, text_2, text_3, text_4, text_5)
-{
+async function displayResuln(item, text_1, text_2, text_3, text_4, text_5) {
     let count = 0;
     let succeeded = 5;
-    let message=``;
+    let message = ``;
     Object.keys(item).map((key) => {
         count++;
         if (count == 1) {
             if (item[key].normalize() != text_1.value.normalize().trim()) {
                 message += `<li class="list-group-item">sai câu 1 đáp án là '${item[key]}'</li>`;
-                succeeded --;
+                succeeded--;
             }
         }
         if (count == 2) {
             if (item[key].normalize() != text_2.value.normalize().trim()) {
                 message += `<li class="list-group-item">sai câu 2 đáp án là '${item[key]}'</li>`;
-                succeeded --;
+                succeeded--;
             }
         }
         if (count == 3) {
             if (item[key].normalize() != text_3.value.normalize().trim()) {
                 message += `<li class="list-group-item">sai câu 3 đáp án là '${item[key]}'</li>`;
-                succeeded --;
+                succeeded--;
             }
         }
         if (count == 4) {
             if (item[key].normalize() != text_4.value.normalize().trim()) {
                 message += `<li class="list-group-item">sai câu 4 đáp án là '${item[key]}'</li>`;
-                succeeded --;
+                succeeded--;
             }
         }
         if (count == 5) {
             if (item[key].normalize() != text_5.value.normalize().trim()) {
                 message += `<li class="list-group-item">sai câu 5 đáp án là '${item[key]}'</li>`;
-                succeeded --;
+                succeeded--;
             }
         }
-        if(message === `` && count == 5) {
+        if (message === `` && count == 5) {
             message += `<li class="list-group-item"><strong>Chính xác</strong></li>`;
         }
     });
@@ -245,6 +244,27 @@ async function displayResuln(item, text_1, text_2, text_3, text_4, text_5)
     return message;
 }
 
+let lastRandom = 0;
+async function randomOption() {
+    let currentRandomNumber = 1;
+
+    do{
+       currentRandomNumber = Math.floor(Math.random() * 3) + 1;
+       console.log("gg");
+    }while(lastRandom === currentRandomNumber);
+
+    lastRandom = currentRandomNumber
+
+    if (currentRandomNumber === 1) {
+        getText_1()
+    }
+    if (currentRandomNumber === 2) {
+        getText_2()
+    }
+    if (currentRandomNumber === 3) {
+        getText_3()
+    }
+}
 function hidenOrshowControl() {
     statusControl = !statusControl;
     if (statusControl) {
