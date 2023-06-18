@@ -250,7 +250,6 @@ async function randomOption() {
 
     do{
        currentRandomNumber = Math.floor(Math.random() * 3) + 1;
-       console.log("gg");
     }while(lastRandom === currentRandomNumber);
 
     lastRandom = currentRandomNumber
