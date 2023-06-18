@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>write</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <title>Bootstrap Example</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .marks {
+            background: red;
+            color: white;
+        }
+
+        hr.new1 {
+            border-bottom: 2px solid red;
+        }
+
+        .close {
+            font-size: 45px;
+            font-weight: 600;
+            display: inline-block;
+            transform: rotate(45deg);
+        }
+
+        .prevent-select {
+            -webkit-user-select: none;
+            /* Safari */
+            -ms-user-select: none;
+            /* IE 10 and IE 11 */
+            user-select: none;
+            /* Standard syntax */
+        }
+    </style>
+</head>
+<body>
+    <section style="margin: auto; padding:30px; position: relative; max-width: 2200px;">
+        <div class='grid text-center'>
+            <div id="control" style=" width:350px;">
+                <div id="" style="display: grid;text-align: left; position: fixed">
+                    <div>
+                        <button type="button" id="bt_1" onclick="getText_1()" class="btn btn-info">ex 1</button>
+                        <button type="button" id="bt_2" onclick="getText_2()" class="btn btn-info">ex 2</button>
+                        <button type="button" id="bt_3" onclick="getText_3()" class="btn btn-info">ex 3</button>
+                        <button type="button" onclick="resulnce()" class="btn btn-success">hiển thị kết quả</button>
+                    </div>
+                    <div id="resuln">
+                        <div style ="position: relative;">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="resuln" class="g-col-10" style="border: none; border-left-style: double ;
+            text-align: left; padding: 10px; min-height:200px ;">
+                <button id="hiden" onclick="hidenOrshowControl()" type="button" style=" margin-bottom: 10px; font-size: 30px; height: auto;" class="btn btn-outline-info"><<<</button>
+                <div id="root">
+                </div>
+            </div>
+        </div>
+    <section>
+    <script src="javascript/ex.js"></script>
+</body>
+</html>
