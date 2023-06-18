@@ -9,7 +9,9 @@ const btn_1 = document.getElementById("bt_1");
 const btn_2 = document.getElementById("bt_2");
 const btn_3 = document.getElementById("bt_3");
 
-console.log("connected");
+let option = "ex_1";
+let statusControl = false;
+
 let resuln = {
     ex1: {
         _1: "near",
@@ -22,7 +24,7 @@ let resuln = {
         _1: "tired",
         _2: "gives her",
         _3: "lot of",
-        _4: "mush does",
+        _4: "much does",
         _5: "so expensive",
     },
     ex3: {
@@ -30,11 +32,11 @@ let resuln = {
         _2: "took",
         _3: "better",
         _4: "so many",
-        _5: "don't you",
+        _5: "don’t you",
     },
 };
-let option = "ex_1";
-let statusControl = false;
+
+getText_1();
 
 async function getText_1() {
     btn_1.className = "btn btn-primary";
@@ -44,7 +46,7 @@ async function getText_1() {
     display.innerHTML = ``;
     let _conten = `
     
-        <p>0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sebastian had never been camping before.</p>
+        <p><strong>Example:</strong></br>0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sebastian had never been camping before.</p>
 
         <p><strong>This was</strong>&nbsp; ......................................................&nbsp; <strong>Sebastian had been camping.</strong></p>
 
@@ -52,7 +54,6 @@ async function getText_1() {
 
         <p>&nbsp;</p>
 
-        <p>&nbsp;</p>
 
         <p>1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The campsite was not far from the sea.</p>
 
@@ -80,13 +81,12 @@ async function getText_1() {
 
         <p>5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The sea was warmer than they had expected.</p>
 
-        <p><strong>The sea was not <input type="text" id="ex_1.5"/> they had expected.</strong></p>
+        <p><strong>The sea was not as <input type="text" id="ex_1.5"/> they had expected.</strong></p>
 
     `;
     textEx.innerHTML = _conten;
     option = "ex_1";
 }
-getText_1();
 
 async function getText_2() {
     btn_2.className = "btn btn-primary";
@@ -208,31 +208,31 @@ async function displayResuln(item, text_1, text_2, text_3, text_4, text_5)
     Object.keys(item).map((key) => {
         count++;
         if (count == 1) {
-            if (item[key] != text_1.value) {
+            if (item[key].normalize() != text_1.value.normalize().trim()) {
                 message += `<li class="list-group-item">sai câu 1 đáp án là '${item[key]}'</li>`;
                 succeeded --;
             }
         }
         if (count == 2) {
-            if (item[key] != text_2.value) {
+            if (item[key].normalize() != text_2.value.normalize().trim()) {
                 message += `<li class="list-group-item">sai câu 2 đáp án là '${item[key]}'</li>`;
                 succeeded --;
             }
         }
         if (count == 3) {
-            if (item[key] != text_3.value) {
+            if (item[key].normalize() != text_3.value.normalize().trim()) {
                 message += `<li class="list-group-item">sai câu 3 đáp án là '${item[key]}'</li>`;
                 succeeded --;
             }
         }
         if (count == 4) {
-            if (item[key] != text_4.value) {
+            if (item[key].normalize() != text_4.value.normalize().trim()) {
                 message += `<li class="list-group-item">sai câu 4 đáp án là '${item[key]}'</li>`;
                 succeeded --;
             }
         }
         if (count == 5) {
-            if (item[key] != text_5.value) {
+            if (item[key].normalize() != text_5.value.normalize().trim()) {
                 message += `<li class="list-group-item">sai câu 5 đáp án là '${item[key]}'</li>`;
                 succeeded --;
             }
